@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class Player : NetworkBehaviour
 {
     //modificado
+    //modificado pelo Cássio
     public int moveX = 0;
 
     public int moveY = 0;
