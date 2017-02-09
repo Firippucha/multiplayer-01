@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour
 {
-
+    //modificado
     public int moveX = 0;
 
     public int moveY = 0;
