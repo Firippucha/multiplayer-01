@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class Player : NetworkBehaviour
 {
     public float moveSpeed = 0.2f;
+    public float moveRotation = 20;
 
     // Use this for initialization
     void Start()
@@ -17,7 +18,8 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            transform.Translate(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed, 0);
+            transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed);
+            transform.Rotate(0, Input.GetAxis("Horizontal") * moveRotation, 0);
         }
     }
 }
