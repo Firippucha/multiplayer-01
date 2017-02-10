@@ -4,12 +4,6 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour
 {
-    //modificado
-    //modificado pelo Cássio
-    public int moveX = 0;
-
-    public int moveY = 0;
-
     public float moveSpeed = 0.2f;
 
     // Use this for initialization
@@ -21,35 +15,9 @@ public class Player : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveX * moveSpeed, moveY * moveSpeed, 0);
-
         if (isLocalPlayer)
         {
-            moveX = 0;
-            moveY = 0;
-
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                moveX -= 1;
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                moveX += 1;
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                moveY += 1;
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                moveY -= 1;
-            }
+            transform.Translate(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed, 0);
         }
     }
-
-    public void FixedUpdate()
-    {
-        transform.Translate(moveX * moveSpeed, moveY * moveSpeed, 0);
-    }
-
 }
