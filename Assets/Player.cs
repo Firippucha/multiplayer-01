@@ -22,4 +22,5 @@ public class Player : NetworkBehaviour
             transform.Rotate(0, Input.GetAxis("Horizontal") * moveRotation, 0);
         }
     }
+
 }
