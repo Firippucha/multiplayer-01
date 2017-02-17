@@ -1,7 +1,10 @@
 .vs 
 Library 
 Temp 
+*.exe 
+*.pbd 
 *.apk 
 *.csproj 
 *.sln 
 /multiplayer-01_Data
+/build
